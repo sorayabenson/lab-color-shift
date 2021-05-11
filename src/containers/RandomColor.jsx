@@ -3,8 +3,8 @@ import ColorCube from '../components/color/ColorCube';
 
 export default class RandomColor extends Component {
     state = {
-        color: '#FFD426'
-        // surprise: '',
+        color: '#FFD426',
+        surprise: '',
     }
 
     getRandomColor(array) {
@@ -18,16 +18,18 @@ export default class RandomColor extends Component {
         //setState with random color from colorArray every second
         const colorArray = ['#FFD426', '#FEB83A', '#FD9C4F', '#FC8063', '#FB6377', '#FA478C', '#F92BA0'];
 
-        // const supriseURL = 'https://en.meming.world/images/en/2/2c/Surprised_Pikachu_HD.jpg';
-
         const newColor = this.getRandomColor(colorArray);
 
-        // if (newColor === this.state.color) {
-        //     this.setState({ color: '#FFFFFF', suprise: surpriseURL })
-        // } else {
-            // this.setState({ color: newColor, surprise: '' });
-        // }
-        this.setState({ color: newColor });
+        if (newColor !== this.state.color) {
+            this.setState({ 
+                color: newColor, 
+                surprise: ''
+            })
+        } else {
+            this.setState({ 
+                color: '', 
+                surprise: 'https://en.meming.world/images/en/2/2c/Surprised_Pikachu_HD.jpg' });
+        }
     }
 
     componentDidMount = () => setInterval(() => {
@@ -35,11 +37,12 @@ export default class RandomColor extends Component {
     }, 1500);
 
     render() {
-        const { color } = this.state;
+        const { color, surprise } = this.state;
 
         return (
             <ColorCube 
-                color={color} />
+                color={color}
+                surprise={surprise} />
         )
     }
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './ColorCube.css';
 
-const ColorCube = ({ color }) => {
+const ColorCube = ({ color, surprise }) => {
     return (
         <div 
             style={{ 
-                background: color
+                backgroundColor: color,
+                backgroundImage: `url(${surprise})`
             }}
             className={style.cube}
         >
@@ -15,7 +16,8 @@ const ColorCube = ({ color }) => {
 }
 
 ColorCube.propTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string.isRequired,
+    surprise: PropTypes.string.isRequired
 }
 
 export default ColorCube
