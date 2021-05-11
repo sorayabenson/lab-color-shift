@@ -5,6 +5,7 @@
 body {
     width: 100vh;
     height: 100vh;
+    background: #fffdf5;
     font-size: 16pt;
     margin: 0;
     display: flex;
@@ -14,10 +15,9 @@ body {
 }
 
 .cube {
-    width: 40%;
-    height: 40%;
-    background: blue;
-    border: black solid 2px;
-    border-radius: 2px;
-    box-shadow: black -8px 8px;
+    width: 35rem;
+    height: 35rem;
+    border: black solid 3px;
+    border-radius: 3px;
+    box-shadow: black -10px 10px;
 }

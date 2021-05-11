@@ -1,22 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import style from './ColorCube.css';
 
-const ColorCube = ({ color, onChange }) => {
+const ColorCube = ({ color }) => {
     return (
         <div 
             style={{ 
-                background: color, 
-                width: '35rem',
-                height: '35rem',
-                border: '2px solid black',
+                background: color
             }}
-            onChange={onChange}>
+            className={style.cube}
+        >
         </div>
     )
 }
 
 ColorCube.propTypes = {
-    color: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired
 }
 
 export default ColorCube
